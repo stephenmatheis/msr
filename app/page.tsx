@@ -8,7 +8,7 @@ export default function HomePage() {
     return (
         <App>
             <Sidebar />
-            <Toolbar />
+            <Toolbar title={"Home"} />
             <Main>
                 <Home />
             </Main>

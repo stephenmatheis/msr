@@ -1,14 +1,20 @@
 .main {
-    padding-top: calc(60px + 2rem + 2rem);
-    padding-left: 300px;
-    padding-right: 2rem;
-    padding-bottom: 2rem;
+    padding-top: calc(60px + 2rem);
+    padding-left: calc(var(--sidebar-width) + (var(--sidebar-padding) * 2));
+    padding-right: 1rem;
+    padding-bottom: 1rem;
     height: 100%;
     overflow: auto;
 
+    &.open {
+        padding-left: calc(var(--sidebar-width) + (var(--sidebar-padding) * 2));
+    }
+
+    &.closed {
+        padding-left: 0;
+    }
+
     .content {
-        padding: 2rem;
-        background: rgb(255, 255, 255, 1);
-        backdrop-filter: blur(10px);
+        padding-inline: 1rem;
     }
 }

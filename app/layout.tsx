@@ -1,16 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { UIProvider } from "@/providers/ui-provider";
 import "./layout.scss";
-
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-});
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export const metadata: Metadata = {
     title: "MSR",
@@ -24,7 +15,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+            <body>
+                <UIProvider>{children}</UIProvider>
+            </body>
         </html>
     );
 }
