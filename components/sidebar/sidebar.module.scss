@@ -1,0 +1,14 @@
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    padding: 2rem;
+
+    .content {
+        background: rgb(255, 255, 255, 1);
+        backdrop-filter: blur(10px);
+        height: 100%;
+    }
+}

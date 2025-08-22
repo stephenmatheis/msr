@@ -1,0 +1,14 @@
+.main {
+    padding-top: calc(60px + 2rem + 2rem);
+    padding-left: 300px;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    height: 100%;
+    overflow: auto;
+
+    .content {
+        padding: 2rem;
+        background: rgb(255, 255, 255, 1);
+        backdrop-filter: blur(10px);
+    }
+}
