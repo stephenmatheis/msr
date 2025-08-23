@@ -57,28 +57,12 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-
-        // DEV:
     }
 
     .toggle {
         position: relative;
         z-index: 10;
         color: var(--primary);
-
-        // &:hover {
-        //     &::before {
-        //         content: "";
-        //         position: absolute;
-        //         top: 50%;
-        //         left: 50%;
-        //         transform: translate(-50%, -50%);
-        //         height: 44px;
-        //         width: 44px;
-        //         border-radius: 50%;
-        //         background-color: #ff000010;
-        //     }
-        // }
     }
 
     .content {
@@ -87,7 +71,5 @@
         justify-content: center;
         height: 60px;
         width: 100%;
-
-        // @include utils.glass;
     }
 }
