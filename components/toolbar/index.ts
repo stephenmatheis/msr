@@ -1,1 +1,1 @@
-export { Toolbar } from './toolbar';
+export * as Toolbar from "./namespace";

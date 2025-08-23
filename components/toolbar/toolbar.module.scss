@@ -10,66 +10,66 @@
     padding-left: var(--sidebar-width);
     padding-right: 1rem;
 
-    .title {
-        font-weight: 700;
-    }
-
-    .left,
-    .right {
-        flex: 1;
-        display: flex;
-        gap: 0.75rem;
-
-        .group {
-            display: flex;
-            height: 44px;
-            border-radius: 22px;
-
-            @include utils.glass;
-        }
-
-        button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            font-size: 1.25rem;
-
-            &:hover {
-                background-color: #f0f0f3;
-            }
-
-            i {
-                line-height: 0;
-            }
-        }
-    }
-
-    .left {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-    }
-
-    .right {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
-
-    .toggle {
-        position: relative;
-        z-index: 10;
-        color: var(--primary);
-    }
-
     .content {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 60px;
         width: 100%;
+
+        .title,
+        .buttons {
+            flex: 1;
+            display: flex;
+            gap: 0.75rem;
+
+            .group {
+                display: flex;
+                height: 44px;
+                border-radius: 22px;
+
+                @include utils.glass;
+
+                .toggle {
+                    position: relative;
+                    z-index: 10;
+                    color: var(--primary);
+                }
+
+                .route {
+                    font-weight: 700;
+                }
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 50%;
+                    font-size: 1.25rem;
+
+                    &:hover {
+                        background-color: #f0f0f3;
+                    }
+
+                    i {
+                        line-height: 0;
+                    }
+                }
+            }
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
     }
 }

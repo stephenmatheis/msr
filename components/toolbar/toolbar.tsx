@@ -4,12 +4,12 @@ import * as motion from "motion/react-client";
 import { useUI } from "@/providers/ui-provider";
 import styles from "./toolbar.module.scss";
 
-type ToolbarProps = {
-    title: string;
+type ToolbarRootProps = {
+    children: React.ReactNode;
 };
 
-export function Toolbar({ title }: ToolbarProps) {
-    const { isSidebarOpen, setIsSidebarOpen } = useUI();
+export function ToolbarRoot({ children }: ToolbarRootProps) {
+    const { isSidebarOpen } = useUI();
 
     return (
         <motion.div
@@ -30,46 +30,47 @@ export function Toolbar({ title }: ToolbarProps) {
                 damping: 20,
             }}
         >
-            <div className={styles.content}>
-                <div className={styles.left}>
-                    <div className={styles.group}>
-                        <button
-                            className={styles.toggle}
-                            onClick={() => {
-                                setIsSidebarOpen((prev) => !prev);
-                            }}
-                        >
-                            <i className="bi bi-layout-sidebar"></i>
-                        </button>
-                    </div>
-                    <div className={styles.group}>
-                        <button>
-                            <i className="bi bi-chevron-left"></i>
-                        </button>
-                    </div>
-                    <div className={styles.title}>{title}</div>
-                </div>
-                <div className={styles.right}>
-                    <div className={styles.group}>
-                        <button>1</button>
-                    </div>
-                    <div className={styles.group}>
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                    </div>
-                    <div className={styles.group}>
-                        <button>1</button>
-                    </div>
-                    <div className={styles.group}>
-                        <button>1</button>
-                        <button>2</button>
-                    </div>
-                    <div className={styles.group}>
-                        <button>1</button>
-                    </div>
-                </div>
-            </div>
+            <div className={styles.content}>{children}</div>
         </motion.div>
     );
+}
+
+export function ToolbarGroup({ children }: { children: React.ReactNode }) {
+    return <div className={styles.group}>{children}</div>;
+}
+
+export function ToolbarTitle({ children }: { children: React.ReactNode }) {
+    const { setIsSidebarOpen } = useUI();
+
+    return (
+        <div className={styles.title}>
+            <ToolbarGroup>
+                <ToolbarButton
+                    className={styles.toggle}
+                    onClick={() => {
+                        setIsSidebarOpen((prev) => !prev);
+                    }}
+                >
+                    <i className="bi bi-layout-sidebar"></i>
+                </ToolbarButton>
+            </ToolbarGroup>
+            <ToolbarGroup>
+                <ToolbarButton>
+                    <i className="bi bi-chevron-left"></i>
+                </ToolbarButton>
+            </ToolbarGroup>
+            <div className={styles.route}>{children}</div>
+        </div>
+    );
+}
+
+export function ToolbarButtons({ children }: { children: React.ReactNode }) {
+    return <div className={styles.buttons}>{children}</div>;
+}
+
+export function ToolbarButton({
+    children,
+    ...props
+}: React.ButtonHTMLAttributes<HTMLButtonElement> & { children: React.ReactNode }) {
+    return <button {...props}>{children}</button>;
 }
