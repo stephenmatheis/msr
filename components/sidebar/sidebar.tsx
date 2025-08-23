@@ -8,7 +8,24 @@ export function Sidebar() {
     const { isSidebarOpen } = useUI();
 
     return (
-        <motion.div className={`${styles.sidebar} ${isSidebarOpen ? styles.open : styles.closed}`}>
+        <motion.div
+            className={styles.sidebar}
+            variants={{
+                open: {
+                    x: 0,
+                },
+                closed: {
+                    x: "calc(var(--sidebar-width) * -1)",
+                },
+            }}
+            initial="open"
+            animate={isSidebarOpen ? "open" : "closed"}
+            transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+            }}
+        >
             <div className={styles.content}>
                 <div className={styles.title}>Reporter</div>
             </div>

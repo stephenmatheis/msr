@@ -1,18 +1,20 @@
 .main {
     padding-top: calc(60px + 2rem);
-    padding-left: calc(var(--sidebar-width) + (var(--sidebar-padding) * 2));
     padding-right: 1rem;
     padding-bottom: 1rem;
     height: 100%;
     overflow: auto;
 
-    &.open {
-        padding-left: calc(var(--sidebar-width) + (var(--sidebar-padding) * 2));
-    }
+    // DEV:
+    padding-left: calc(var(--sidebar-width));
 
-    &.closed {
-        padding-left: 1rem;
-    }
+    // &.open {
+    //     padding-left: calc(var(--sidebar-width));
+    // }
+
+    // &.closed {
+    //     padding-left: 1rem;
+    // }
 
     .content {
         padding-inline: 1rem;

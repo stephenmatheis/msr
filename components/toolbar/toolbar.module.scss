@@ -2,20 +2,13 @@
 
 .toolbar {
     position: absolute;
-    top: 0;
-    width: calc(100% - var(--sidebar-width) - 2rem - var(--sidebar-padding));
+    top: 1rem;
+    right: 0;
     height: 60px;
-    margin-top: 1rem;
     z-index: 10;
-
-    &.open {
-        left: calc(var(--sidebar-width) + (var(--sidebar-padding) * 2));
-    }
-
-    &.closed {
-        width: calc(100% - 2rem);
-        left: 1rem;
-    }
+    width: 100%;
+    padding-left: var(--sidebar-width);
+    padding-right: 1rem;
 
     .title {
         font-weight: 700;

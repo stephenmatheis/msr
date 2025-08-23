@@ -5,20 +5,9 @@
     top: 0;
     left: 0;
     height: 100%;
-    padding: 1rem;
     overflow: hidden;
-
-    &.open {
-        .content {
-            width: var(--sidebar-width);
-            padding: 3rem 2rem;
-        }
-    }
-
-    &.closed {
-        width: 0;
-        padding: 3rem 0;
-    }
+    width: var(--sidebar-width);
+    padding: 1rem;
 
     .content {
         height: 100%;
