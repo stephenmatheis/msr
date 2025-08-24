@@ -5,16 +5,16 @@
     --foreground: #1d1d1f;
     --primary: #ff4943;
     --white: #ffffff;
-    --sidebar-width: 350px;
+    --sidebar-width: 352px;
     --sidebar-padding: 1rem;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #1d1d1f;
-        --foreground: #ededed;
-    }
-}
+// @media (prefers-color-scheme: dark) {
+//     :root {
+//         --background: #1d1d1f;
+//         --foreground: #ededed;
+//     }
+// }
 
 body {
     color: var(--foreground);
@@ -42,8 +42,8 @@ button {
     border: none;
 }
 
-@media (prefers-color-scheme: dark) {
-    html {
-        color-scheme: dark;
-    }
-}
+// @media (prefers-color-scheme: dark) {
+//     html {
+//         color-scheme: dark;
+//     }
+// }

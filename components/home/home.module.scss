@@ -24,5 +24,65 @@
             border: solid 1px #f0f0f0;
             font-weight: 900;
         }
+
+        textarea {
+            height: 300px;
+            border: solid 1px #ccc;
+            resize: none;
+            width: 100%;
+            border-radius: 2rem;
+            padding: 1.5rem 1rem;
+
+            &:focus {
+                outline: none;
+                border: solid 1px var(--primary);
+            }
+        }
+    }
+
+    .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 2rem;
+
+        button {
+            background-color: var(--primary);
+            color: var(--white);
+            height: 44px;
+            padding-inline: 2rem;
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+    }
+}
+
+.group {
+    display: flex;
+    height: 44px;
+    border-radius: 22px;
+
+    button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        z-index: 10;
+        color: var(--primary);
+
+        &:hover {
+            background-color: #f0f0f3;
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
     }
 }
