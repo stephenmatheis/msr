@@ -27,7 +27,7 @@ export function Sidebar() {
             }}
         >
             <div className={styles.content}>
-                <div className={styles.title}>Reporter</div>
+                <div className={styles.title}>Title</div>
             </div>
         </motion.div>
     );

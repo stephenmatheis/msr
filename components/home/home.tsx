@@ -89,7 +89,7 @@ export function Home() {
                             damping: 20,
                         }}
                     >
-                        <Toolbar.Title>Home</Toolbar.Title>
+                        <Toolbar.Title>Page name</Toolbar.Title>
                     </motion.div>
                 </Toolbar.Leading>
                 <Toolbar.Center>
