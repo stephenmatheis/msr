@@ -26,16 +26,18 @@
         }
 
         textarea {
-            height: 300px;
-            border: solid 1px #ccc;
+            height: 200px;
+            border: solid 1px #dddddd;
+            background-color: #f7f7fa;
             resize: none;
             width: 100%;
-            border-radius: 2rem;
+            border-radius: 1.5rem;
             padding: 1.5rem 1rem;
 
             &:focus {
                 outline: none;
                 border: solid 1px var(--primary);
+                background-color: #fff5f5;
             }
         }
     }
@@ -47,8 +49,8 @@
         margin-bottom: 2rem;
 
         button {
-            background-color: var(--primary);
-            color: var(--white);
+            background-color: var(--primary-light);
+            color: var(--primary);
             height: 44px;
             padding-inline: 2rem;
             border-radius: 22px;
@@ -74,10 +76,6 @@
         height: 44px;
         border-radius: 50%;
         z-index: 10;
-
-        &:hover {
-            background-color: #f0f0f3;
-        }
 
         svg {
             width: 20px;

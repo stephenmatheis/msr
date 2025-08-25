@@ -31,6 +31,7 @@ export function Home() {
                 <Toolbar.Leading>
                     <motion.div
                         className={styles.group}
+                        whileHover={{ scale: 1.15 }}
                         variants={{
                             open: {
                                 x: 16 * -4,
@@ -182,65 +183,66 @@ export function Home() {
                             }}
                         />
                     </div>
-                    <div
-                        className={styles.buttons}
-                        onClick={() => {
-                            console.log(values);
+                    <div className={styles.buttons}>
+                        <button
+                            onClick={() => {
+                                console.log(values);
 
-                            const doc = new Document({
-                                sections: [
-                                    {
-                                        children: [
-                                            new Paragraph({
-                                                children: [new TextRun(new Date(values.date).toDateString())],
-                                            }),
-                                            new Paragraph({
-                                                children: [],
-                                            }),
-                                            new Paragraph({
-                                                text: "Accomplishments",
-                                                heading: HeadingLevel.HEADING_1,
-                                            }),
-                                            ...values.accomplishments.split("\n").map((line) => {
-                                                return new Paragraph({
-                                                    children: [new TextRun(line)],
-                                                });
-                                            }),
-                                            new Paragraph({
-                                                text: "Risks",
-                                                heading: HeadingLevel.HEADING_1,
-                                            }),
-                                            ...values.risks.split("\n").map((line) => {
-                                                return new Paragraph({
-                                                    children: [new TextRun(line)],
-                                                });
-                                            }),
-                                        ],
-                                    },
-                                ],
-                            });
+                                const doc = new Document({
+                                    sections: [
+                                        {
+                                            children: [
+                                                new Paragraph({
+                                                    children: [new TextRun(new Date(values.date).toDateString())],
+                                                }),
+                                                new Paragraph({
+                                                    children: [],
+                                                }),
+                                                new Paragraph({
+                                                    text: "Accomplishments",
+                                                    heading: HeadingLevel.HEADING_1,
+                                                }),
+                                                ...values.accomplishments.split("\n").map((line) => {
+                                                    return new Paragraph({
+                                                        children: [new TextRun(line)],
+                                                    });
+                                                }),
+                                                new Paragraph({
+                                                    text: "Risks",
+                                                    heading: HeadingLevel.HEADING_1,
+                                                }),
+                                                ...values.risks.split("\n").map((line) => {
+                                                    return new Paragraph({
+                                                        children: [new TextRun(line)],
+                                                    });
+                                                }),
+                                            ],
+                                        },
+                                    ],
+                                });
 
-                            Packer.toBlob(doc).then((blob) => {
-                                console.log(blob);
+                                Packer.toBlob(doc).then((blob) => {
+                                    console.log(blob);
 
-                                const blobUrl = URL.createObjectURL(blob);
-                                const link = document.createElement("a");
+                                    const blobUrl = URL.createObjectURL(blob);
+                                    const link = document.createElement("a");
 
-                                link.href = blobUrl;
-                                link.download = "example.docx";
-                                link.style.display = "none";
+                                    link.href = blobUrl;
+                                    link.download = "example.docx";
+                                    link.style.display = "none";
 
-                                document.body.appendChild(link);
+                                    document.body.appendChild(link);
 
-                                link.click();
+                                    link.click();
 
-                                URL.revokeObjectURL(blobUrl);
+                                    URL.revokeObjectURL(blobUrl);
 
-                                link.remove();
-                            });
-                        }}
-                    >
-                        <button>Save</button>
+                                    link.remove();
+                                });
+                            }}
+                        >
+                            Save
+                        </button>
                     </div>
                 </div>
             </Main>

@@ -36,7 +36,46 @@ export function ToolbarRoot({ children }: ToolbarRootProps) {
 }
 
 export function ToolbarGroup({ children }: { children: React.ReactNode }) {
-    return <div className={styles.group}>{children}</div>;
+    if (Array.isArray(children)) {
+        return (
+            <motion.div className={styles.group}>
+                {children.map((child, i) => {
+                    return (
+                        <motion.div
+                            key={i}
+                            style={{
+                                borderRadius: "50%",
+                            }}
+                            whileHover={{
+                                scale: 1.15,
+                            }}
+                            transition={{
+                                type: "spring",
+                                stiffness: 300,
+                                damping: 20,
+                            }}
+                        >
+                            {child}
+                        </motion.div>
+                    );
+                })}
+            </motion.div>
+        );
+    }
+
+    return (
+        <motion.div
+            className={styles.group}
+            whileHover={{ scale: 1.1 }}
+            transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+            }}
+        >
+            {children}
+        </motion.div>
+    );
 }
 
 export function ToolbarLeading({ children }: { children: React.ReactNode }) {
